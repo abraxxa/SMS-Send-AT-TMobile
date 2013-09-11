@@ -1,4 +1,6 @@
 Revision history for SMS-Send-AT-TMobile: {{ $dist->version }}
 
 {{ $NEXT }}
+
+0.001     2013-09-11 10:10:39 Europe/Vienna
     - Initial release using the HTTP POST API
