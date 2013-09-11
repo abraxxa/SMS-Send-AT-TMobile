@@ -1,0 +1,4 @@
+Revision history for SMS-Send-AT-TMobile: {{ $dist->version }}
+
+{{ $NEXT }}
+    - Initial release using the HTTP POST API
