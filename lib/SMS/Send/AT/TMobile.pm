@@ -27,7 +27,7 @@ use base 'SMS::Send::Driver';
     if ( $sent ) {
         print "Message sent ok\n";
     } else {
-        print "Failed to send message\n";
+        print 'Failed to send message: ', $@->{as_string}, "\n";
     }
 
 =head1 METHODS
@@ -42,8 +42,6 @@ Returns true if the message was successfully sent.
 Returns false if an error occurred and $@ is set to a hashref of the following info:
 
     {
-        content    => '', # content POSTed to the url above
-        is_success => '', # was HTTP POST successful or not (1 or 0)
         as_string  => '', # HTTP POST response as a string
     }
 
