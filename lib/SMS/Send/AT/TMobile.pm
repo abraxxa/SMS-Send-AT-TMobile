@@ -16,7 +16,7 @@ use base 'SMS::Send::Driver';
         _login    => 'foo',
         _password => 'bar',
     );
- 
+
     my $sent = $sender->send_sms(
         '_from' => '43676123456789' || 'CUSTOMTEXT',
         'to'    => '43676012345678',
@@ -49,15 +49,15 @@ Throws an exception if a fatal error like a http timeout in the underlying
 connection occurred.
 
 =cut
- 
+
 sub new {
     my $class = shift;
     my $self = { @_ };
- 
+
     $self->{$_}
-        or croak "$_ missing" 
+        or croak "$_ missing"
             for qw( _login _password );
- 
+
     return bless $self, $class;
 }
 
