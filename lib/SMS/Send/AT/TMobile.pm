@@ -77,6 +77,8 @@ sub send_sms {
         $oa_ton = 5;
         $oa_npi = 0;
     }
+    # the API expects the recipient without a leading +
+    ( my $to = $args{to} ) =~ s/^\+//;
 
     my $response = $http->post_form(
         'http://213.162.67.5/cgi-bin/sendsms.fcgi',
@@ -89,7 +91,7 @@ sub send_sms {
             oa_ton      => $oa_ton,
             oa_npi      => $oa_npi,
             # recipient
-            da          => $args{to},
+            da          => $to,
             da_ton      => 1,
             da_npi      => 1,
             text        => $args{text},
