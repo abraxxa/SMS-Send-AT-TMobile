@@ -101,7 +101,7 @@ sub send_sms {
         unless $response->{success};
 
     # known response messages:
-    # +OK 01  message(s) successfully sent to 4367686424320:msgid=0::
+    # +OK 01  message(s) successfully sent to 43676012345678:msgid=0::
     # -ERR 04 Currently unavailable ::
     # -ERR 20 Unknown error ::
     return 1
